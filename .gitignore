@@ -1,0 +1,13 @@
+*.pyc
+Thumbs.db
+*~
+*.sqlite3
+bin
+build
+include
+lib
+.Python
+db.sqlite3
+*.orig
+settings_local.py
+.settings.xml
