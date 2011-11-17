@@ -11,3 +11,4 @@ db.sqlite3
 *.orig
 settings_local.py
 .settings.xml
+.DS_Store

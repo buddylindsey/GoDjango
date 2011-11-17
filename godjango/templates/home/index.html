@@ -11,10 +11,10 @@ GoDjango.com
     {% for v in videos %}
         <article class="article">
             <aside class="preview-image">
-                <img src="{{ v.preview_image }}" height="200px" width"200px" />
+                <img src="{{ v.preview_image }}" />
             </aside>
             <div class="article-content">
-                <header class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a></header>
+                <header class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></header>
                 <section class="article-description">
                 {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
                 </section>
