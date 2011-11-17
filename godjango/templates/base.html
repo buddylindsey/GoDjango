@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <header id="header">
+            GoDjango - Going Through Django Screencasts
+        </header>
+        <nav id="navigation">
+        <ul>
+            <li><a href="{% url home.views.index %}">Browse Videos</a></li>
+            <li><a href="{% url home.views.about %}">About GoDjango</a></li> 
+            <li><a href="{% url home.views.feedback %}">Feedback</a></li> 
+        </ul>
+        </nav>
+        <div id="content">
+        {% block content %}{% endblock %}
+        </div>
+        <footer id="footer">
+           Content and Videos &copy; 2011 GoDjango
+        </footer>
+    </body>
+</html>

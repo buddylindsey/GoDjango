@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+GoDjango.com
+{% endblock %}
+
+{% block content %}
+
+<section class="content">
+{% if videos %}
+    {% for v in videos %}
+        <article class="article">
+            <aside class="preview-image">
+                <img src="{{ v.preview_image }}" height="200px" width"200px" />
+            </aside>
+            <div class="article-content">
+                <header class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a></header>
+                <section class="article-description">
+                {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
+                </section>
+            </div>
+        </article>
+    {% endfor %}
+{% else %}
+    <p>
+        There are no videos at this time.
+    </p>
+{% endif %}
+</section>
+<aside class="side-panel">
+</aside>
+
+{% endblock %}
