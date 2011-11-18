@@ -18,7 +18,7 @@ Video - GoDjango.com
     <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
     <video class="video-js" width="800" height="600" controls preload poster="{{ video.preview_image }}">
       <source src="{{ video.video_mp4 }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-      <source src="{{ video.video_ogv }}" type='video/ogg; codecs="theora, vorbis"' />
+      <!--<source src="{{ video.video_ogv }}" type='video/ogg; codecs="theora, vorbis"' />-->
       <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
       <object class="vjs-flash-fallback" width="800" height="600" type="application/x-shockwave-flash"
         data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
@@ -33,7 +33,7 @@ Video - GoDjango.com
     <!-- Download links provided for devices that can't play video in the browser. -->
     <p class="vjs-no-video"><strong>Download Video:</strong>
       <a href="{{ video.video_mp4 }}">MP4</a>,
-      <a href="{{ video.video_ogv }}">Ogg</a><br>
+      <!-- <a href="{{ video.video_ogv }}">Ogg</a><br>-->
       <!-- Support VideoJS by keeping this link. -->
       <a href="http://videojs.com">HTML5 Video Player</a> by VideoJS
     </p>
@@ -48,7 +48,7 @@ Video - GoDjango.com
       {{ video.description }}
   </div>
   <div class="video-content-comments">
-      <div class="fb-comments" data-href="http://godjango.com/{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
+      <div class="fb-comments" data-href="http://godjango.com{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
   </div>
 </section>
 {% endblock %}
