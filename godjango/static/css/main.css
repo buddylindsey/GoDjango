@@ -49,6 +49,7 @@ body {
     font-family: Verdana,Helvetica,Arial;
     font-size: 14px;
     margin: 0;
+    line-height: 1.6em;
 }
 
 #header{
@@ -60,7 +61,6 @@ body {
 #navigation{
     border-bottom: 1px solid gray;
     border-top: 1px solid gray;
-    line-height: 30px;
 }
 
 #navigation ul{
@@ -107,7 +107,6 @@ body {
 .article-header{
     font-size: 16px;
     font-weight: bold;
-    margin: 0px 0px 5px 0px;
 }
 
 .article-header a{
@@ -122,7 +121,6 @@ body {
 }
 
 .article-description{
-    line-height: 18px;
     padding: 0px 0px 0px 2px;
 }
 
