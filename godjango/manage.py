@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 from django.core.management import execute_manager
 import imp
+import os
+import site
+import sys
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+path = lambda *a: os.path.join(ROOT, *a)
+
+site.addsitedir(path('vendor'))
+
 try:
     imp.find_module('settings') # Assumed to be in the same directory.
 except ImportError:
