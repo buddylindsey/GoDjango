@@ -1,17 +1,16 @@
 {% extends "base.html" %}
 
 {% block title %}
-GoDjango.com
+GoDjango.com - Going Through Django Screencasts
 {% endblock %}
 
 {% block content %}
-
 <section class="content">
 {% if videos %}
     {% for v in videos %}
         <article class="article">
             <aside class="preview-image">
-                <img src="{{ v.preview_image }}" />
+                <img src="{{ v.thumbnail_image }}" />
             </aside>
             <div class="article-content">
                 <header class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></header>

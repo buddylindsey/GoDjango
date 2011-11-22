@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}
-Video - GoDjango.com
+{{ video.title }} - GoDjango.com
 {% endblock %}
 
 {% block head %}
+<meta name="description" content="{{ video.description }}" />
 <script src="/static/js/video.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
     // Add VideoJS to all video tags on the page when the DOM is ready
