@@ -5,6 +5,19 @@ GoDjango.com - Going Through Django Screencasts
 {% endblock %}
 
 {% block content %}
+<aside id="side-panel">
+  <div class="widget">
+    <ul>
+      <li><a href="http://feeds.feedburner.com/GoDjango">RSS</a></li>
+      <li><a href="http://www.facebook.com/pages/GoDjango/110180145763953">Facebook</a></li>
+    </ul>
+  </div>
+  <div class="widget">
+    <a href="http://www.linode.com/?r=3a66ff0ec674bff254f8de21f5418489b791336e"><img src="/static/images/linode.png" alt="Hosting provided by Linode" /></a>
+  </div>
+</aside>
+
+
 <section class="content">
 {% if videos %}
     {% for v in videos %}
@@ -26,7 +39,4 @@ GoDjango.com - Going Through Django Screencasts
     </p>
 {% endif %}
 </section>
-<aside class="side-panel">
-</aside>
-
 {% endblock %}

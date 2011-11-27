@@ -85,12 +85,23 @@ body {
 }
 
 #content{
+    width: 940px;
     margin: 20px 0px 20px 0px;
+    margin: 0 auto;
 }
 
 .content{
-    width: 70%;
-    margin: 0 auto;
+    width: 660px;
+}
+
+#side-panel{
+  width: 290px;
+  position: absolute;
+  margin: 0px 0px 0px 690px;
+}
+
+.widget{
+  margin: 0px 0px 20px 0px;
 }
 
 .article{
