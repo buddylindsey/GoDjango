@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
+from home.rss import LatestVideos
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -13,5 +14,6 @@ urlpatterns = patterns('',
     url(r'^$', 'home.views.index'),
     url(r'^about/$', 'home.views.about'),
     url(r'^feedback/$', 'home.views.feedback'),
+    url(r'^rss/main', LatestVideos()),
     url(r'^(?P<video_id>\d+)-(?P<slug>[-\w]+)/$', 'home.views.video')
 )
