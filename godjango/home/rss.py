@@ -1,5 +1,7 @@
 from django.contrib.syndication.views import Feed
+from datetime import datetime
 from home.models import *
+
 
 class LatestVideos(Feed):
         title = "GoDjango Screencasts"
