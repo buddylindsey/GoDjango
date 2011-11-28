@@ -7,7 +7,7 @@ class LatestVideos(Feed):
         description = "Weekly screencast covering some topic about Django."
 
         def items(self):
-            return Video.objects.order_by('-publish_date')[:10]
+            return Video.objects.filter(publish_date__lte=datetime.now()).order_by('-publish_date')[:10]
 
         def item_title(self, item):
             return item.title
