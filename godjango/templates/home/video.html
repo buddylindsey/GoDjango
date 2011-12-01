@@ -6,42 +6,20 @@
 
 {% block head %}
 <meta name="description" content="{{ video.description }}" />
-<script src="/static/js/video.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-    // Add VideoJS to all video tags on the page when the DOM is ready
-    VideoJS.setupAllWhenReady();
-</script>
+<script type="text/javascript" src="http://cdn.sublimevideo.net/js/oiprw10x.js"></script>
 {% endblock %}
 
 {% block content %}
 <section class="video-content">
-  <div class="video-js-box">
-    <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
-    <video class="video-js" width="800" height="600" controls preload poster="{{ video.preview_image }}">
+  <div class="video">
+    <video class="sublime" width="800" height="600" poster="{{ video.preview_imgae }}">
       {% if video.video_mp4 %}
-        <source src="{{ video.video_mp4 }}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        <source src="{{ video.video_mp4 }}" />
       {% endif %}
       {% if video.video_vp8 %}
-      <!--<source src="{{ video.video_vp8 }}" type='video/webm' />-->
+        <source src="{{ video.video_vp8 }}" />
       {% endif %}
-      <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
-      <object class="vjs-flash-fallback" width="800" height="600" type="application/x-shockwave-flash"
-        data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-        <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
-        <param name="allowfullscreen" value="true" />
-        <param name="flashvars" value='config={"playlist":["{{ video.preview_image }}", {"url": "{{ video.video_mp4 }}","autoPlay":false,"autoBuffering":true}]}' />
-        <!-- Image Fallback. Typically the same as the poster image. -->
-        <img src="{{ video.preview_image }}" width="800" height="600" alt="Poster Image"
-          title="No video playback capabilities." />
-      </object>
     </video>
-    <!-- Download links provided for devices that can't play video in the browser. -->
-    <p class="vjs-no-video"><strong>Download Video:</strong>
-      <a href="{{ video.video_mp4 }}">MP4</a>,
-      <!-- <a href="{{ video.video_ogv }}">Ogg</a><br>-->
-      <!-- Support VideoJS by keeping this link. -->
-      <a href="http://videojs.com">HTML5 Video Player</a> by VideoJS
-    </p>
   </div>
   <header class="video-content-title">
    <span class="video-content-title-episode">{{ video.episode }}.</span> {{ video.title }}
