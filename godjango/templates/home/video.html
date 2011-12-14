@@ -11,30 +11,41 @@
 
 {% block content %}
 <section class="video-content">
-  <div class="video">
-    <video class="sublime" width="800" height="600" poster="{{ video.preview_imgae }}">
-      {% if video.video_mp4 %}
-        <source src="{{ video.video_mp4 }}" />
-      {% endif %}
-      {% if video.video_vp8 %}
-        <source src="{{ video.video_vp8 }}" />
-      {% endif %}
-    </video>
-  </div>
-  <header class="video-content-title">
-   <span class="video-content-title-episode">{{ video.episode }}.</span> {{ video.title }}
-  </header>
-  <div class="video-content-metadata">
-      {{ video.publish_date }} | {{ video.length }} minutes
-  </div>
-  <div class="vide-content-download">
-    Download: {% if video.video_mp4 %}<a href="{{ video.video_mp4 }}">mp4</a> {% endif %}{% if video.video_vp8 %}| <a href="{{ video.video_vp8 }}">webm</a>{% endif %}
+<div class="video">
+  <video class="sublime" width="800" height="600" poster="{{ video.preview_imgae }}">
+  {% if video.video_mp4 %}
+  <source src="{{ video.video_mp4 }}" />
+  {% endif %}
+  {% if video.video_vp8 %}
+  <source src="{{ video.video_vp8 }}" />
+  {% endif %}
+  </video>
+</div>
+<header class="video-content-title">
+<span class="video-content-title-episode">{{ video.episode }}.</span> {{ video.title }}
+</header>
+<div class="video-content-metadata">
+  {{ video.publish_date }} | {{ video.length }} minutes
+</div>
+<div class="vide-content-download">
+  Download: {% if video.video_mp4 %}<a href="{{ video.video_mp4 }}">mp4</a> {% endif %}{% if video.video_vp8 %}| <a href="{{ video.video_vp8 }}">webm</a>{% endif %}
+</div>
+<div class="">
+  <ul>
+    <li>Show Notes</li>
+    <li>Description</li>
+  </ul>
+</div>
+<div class="video-content-all">
+  <div class="video-content-shownotes">
+    {{ video.show_notes }}
   </div>
   <div class="video-content-description">
-      {{ video.description }}
+    {{ video.description }}
   </div>
-  <div class="video-content-comments">
-      <div class="fb-comments" data-href="http://godjango.com{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
-  </div>
+</div>
+<div class="video-content-comments">
+  <div class="fb-comments" data-href="http://godjango.com{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
+</div>
 </section>
 {% endblock %}
