@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from django.shortcuts import get_object_or_404
 from django.template import RequestContext
 from django.template.defaultfilters import slugify
+
 from home.models import Video
 from datetime import datetime
 
@@ -22,10 +23,5 @@ def video(request, video_id, slug):
 
 def about(request):
     return render_to_response('home/about.html', 
-            { },
-            context_instance=RequestContext(request))
-
-def feedback(request):
-    return render_to_response('home/feedback.html', 
             { },
             context_instance=RequestContext(request))
