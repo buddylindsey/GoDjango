@@ -7,34 +7,45 @@
 {% block head %}
 <meta name="description" content="{{ video.description }}" />
 <script type="text/javascript" src="http://cdn.sublimevideo.net/js/oiprw10x.js"></script>
+<script type="text/javascript" src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-tabs.js"></script>
 {% endblock %}
 
 {% block content %}
-<section class="video-content">
+<div class="video-content">
   <div class="video">
     <video class="sublime" width="800" height="600" poster="{{ video.preview_imgae }}">
-      {% if video.video_mp4 %}
-        <source src="{{ video.video_mp4 }}" />
-      {% endif %}
-      {% if video.video_vp8 %}
-        <source src="{{ video.video_vp8 }}" />
-      {% endif %}
+    {% if video.video_mp4 %}
+    <source src="{{ video.video_mp4 }}" />
+    {% endif %}
+    {% if video.video_vp8 %}
+    <source src="{{ video.video_vp8 }}" />
+    {% endif %}
     </video>
   </div>
-  <header class="video-content-title">
-   <span class="video-content-title-episode">{{ video.episode }}.</span> {{ video.title }}
-  </header>
-  <div class="video-content-metadata">
-      {{ video.publish_date }} | {{ video.length }} minutes
+  <div class="video-content-title">
+    <span class="video-content-title-episode">{{ video.episode }}.</span> {{ video.title }}
   </div>
-  <div class="vide-content-download">
+  <div class="video-content-metadata">
+    {{ video.publish_date }} | {{ video.length }} minutes
+  </div>
+  <div class="video-content-download">
     Download: {% if video.video_mp4 %}<a href="{{ video.video_mp4 }}">mp4</a> {% endif %}{% if video.video_vp8 %}| <a href="{{ video.video_vp8 }}">webm</a>{% endif %}
   </div>
-  <div class="video-content-description">
-      {{ video.description }}
+  <div class="all-tabs" id="meta-tabs">
+    <ul class="tabs">
+      <li class="active"><a href="#description">Description</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+    <div class="pill-content">
+      <div class="active" id="description">
+        {{ video.description }}     
+      </div>
+      <div id="comments">
+        <div class="video-content-comments">
+          <div class="fb-comments" data-href="http://godjango.com{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="video-content-comments">
-      <div class="fb-comments" data-href="http://godjango.com{% url home.views.video video_id=video.id slug=video.slug %}" data-num-posts="10" data-width="800"></div>
-  </div>
-</section>
+</div>
 {% endblock %}
