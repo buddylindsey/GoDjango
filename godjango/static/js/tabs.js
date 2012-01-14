@@ -61,4 +61,5 @@ $(document).ready(function(){
     if ( i != 0 ) contentDivs[id].className = 'tab-content hide';
     i++;
   }
+
 });

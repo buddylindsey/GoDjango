@@ -13,19 +13,18 @@
     <div id="header">
       GoDjango - Going Through Django Screencasts
     </div>
-    <!--<div id="navigation">--> 
-      <div class="topbar-wrapper">
-        <div class="topbar"  >
-          <div class="topbar-inner">
-            <div class="container">
-      <ul class="nav">
-        <li><a href="{% url home.views.index %}">Browse Videos</a></li>
-        <li><a href="{% url about %}">About GoDjango</a></li> 
-        <li><a href="{% url feedback %}">Feedback</a></li> 
-      </ul>
-    </div>
+    <div class="topbar-wrapper">
+      <div class="topbar"  >
+        <div class="topbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li id="home-link"><a href="{% url home.views.index %}">Browse Videos</a></li>
+              <li id="about-link"><a href="{% url about %}">About GoDjango</a></li> 
+              <li id="feedback-link"><a href="{% url feedback %}">Feedback</a></li> 
+            </ul>
           </div>
         </div>
+      </div>
     </div>
     <div id="content">
       {% block content %}{% endblock %}
@@ -53,6 +52,6 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
 
-     </script>
+</script>
    </body>
  </html>
