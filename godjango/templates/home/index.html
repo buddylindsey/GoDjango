@@ -5,34 +5,37 @@ GoDjango.com - Going Through Django Screencasts
 {% endblock %}
 
 {% block content %}
-<aside id="side-panel">
-  <div class="widget">
-    <ul>
-      <li><a href="http://feeds.feedburner.com/GoDjango">RSS</a></li>
-      <li><a href="http://www.facebook.com/pages/GoDjango/110180145763953">Facebook</a></li>
-    </ul>
-  </div>
-</aside>
 
-<section class="content">
-{% if videos %}
-    {% for v in videos %}
-        <article class="article">
-            <aside class="preview-image">
+<div class="row">
+    <div class="span10">
+
+        {% if videos %}
+        {% for v in videos %}
+        <div class="article">
+            <div class="preview-image">
                 <img src="{{ v.thumbnail_image }}" />
-            </aside>
-            <div class="article-content">
-                <header class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></header>
-                <section class="article-description">
-                {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
-                </section>
             </div>
-        </article>
-    {% endfor %}
-{% else %}
-    <p>
+            <div class="article-content">
+                <div class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></div>
+                <div class="article-description">
+                    {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>
         There are no videos at this time.
-    </p>
-{% endif %}
-</section>
+        </p>
+        {% endif %}
+
+    </div>
+    <div class="span4 sidebar">
+        <ul>
+            <li><a href="http://feeds.feedburner.com/GoDjango">RSS</a></li>
+            <li><a href="http://www.facebook.com/pages/GoDjango/110180145763953">Facebook</a></li>
+        </ul>
+    </div>
+</div>
+
 {% endblock %}
