@@ -12,8 +12,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'home.views.index'),
-    url(r'^about/$', 'home.views.about'),
-    url(r'^feedback/$', 'home.views.feedback'),
+    url(r'^about/$', 'home.views.about', name="about"),
+    url(r'^feedback/$', 'contact.views.feedback', name="feedback"),
     url(r'^rss/main', LatestVideos()),
     url(r'^(?P<video_id>\d+)-(?P<slug>[-\w]+)/$', 'home.views.video')
 )

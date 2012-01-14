@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
-        <link rel="stylesheet" href="/static/css/video-js.css" type="text/css" media="screen" title="Video JS" charset="utf-8" />
-        <link rel="alternate" type="application/rss+xml" title="GoDjango.com Main Feed (RSS 2.0)" href="http://feeds.feedburner.com/GoDjango" />
-        {% block head %}{% endblock %}
-    </head>
-    <body>
-        <header id="header">
-            GoDjango - Going Through Django Screencasts
-        </header>
-        <nav id="navigation">
-        <ul>
-            <li><a href="{% url home.views.index %}">Browse Videos</a></li>
-            <li><a href="{% url home.views.about %}">About GoDjango</a></li> 
-            <li><a href="{% url home.views.feedback %}">Feedback</a></li> 
-        </ul>
-        </nav>
-        <div id="content">
-        {% block content %}{% endblock %}
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
+    <link rel="alternate" type="application/rss+xml" title="GoDjango.com Main Feed (RSS 2.0)" href="http://feeds.feedburner.com/GoDjango" />
+    <link rel="stylesheet" tyle="text/css" href="/static/css/bootstrap.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/app.js"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div id="header">
+      GoDjango - Going Through Django Screencasts
+    </div>
+    <div class="topbar-wrapper">
+      <div class="topbar"  >
+        <div class="topbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li id="home-link"><a href="{% url home.views.index %}">Browse Videos</a></li>
+              <li id="about-link"><a href="{% url about %}">About GoDjango</a></li> 
+              <li id="feedback-link"><a href="{% url feedback %}">Feedback</a></li> 
+            </ul>
+          </div>
         </div>
-        <footer id="footer">
-           Content and Videos &copy; 2011 GoDjango
-        </footer>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=120305901411601";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<script type="text/javascript">
+      </div>
+    </div>
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+    <footer id="footer">
+    Content and Videos &copy; 2011-2012 GoDjango
+    </footer>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=120305901411601";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-805005-16']);
-  _gaq.push(['_trackPageview']);
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-805005-16']);
+      _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
 
 </script>
-    </body>
-</html>
+   </body>
+ </html>

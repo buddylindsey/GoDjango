@@ -11,87 +11,79 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*****  end css reset *****/
 
-body {
-    background-color: #FFFFFF;
-    font-family: Verdana,Helvetica,Arial;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.6em;
-}
-
 #header{
-    line-height: 100px;
-    padding: 0px 0px 0px 100px;
-    font-size: 25px;
+  line-height: 100px;
+  padding: 0px 0px 0px 100px;
+  font-size: 25px;
 }
 
 #navigation{
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
 }
 
 #navigation ul{
-    list-style: none;
-    width: 70%;
-    margin: 0 auto;
+  list-style: none;
+  width: 70%;
+  margin: 0 auto;
 }
 
 #navigation ul li{
-    display: inline;
-    margin: 0px 20px 0px 0px;
+  display: inline;
+  margin: 0px 20px 0px 0px;
 }
 
 #navigation ul li a{
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 #navigation ul li a:hover{
-    background-color: #FFFACD;
-    text-decoration: underline;
+  background-color: #FFFACD;
+  text-decoration: underline;
 }
 
 #content{
-    width: 940px;
-    margin: 20px 0px 20px 0px;
-    margin: 0 auto;
+  width: 940px;
+  margin: 20px 0px 20px 0px;
+  margin: 0 auto;
 }
 
 .content{
-    width: 660px;
+  width: 660px;
 }
 
 #side-panel{
@@ -105,100 +97,105 @@ body {
 }
 
 .article{
-    border-bottom: 1px lightgray solid;
-    min-width: 500px;
-    margin: 20px 0px 20px 0px;
+  border-bottom: 1px lightgray solid;
+  min-width: 500px;
+  margin: 20px 0px 20px 0px;
 }
 
 .article-content{
-    margin: 0px 0px 0px 215px;
-    height: 135px;
+  margin: 0px 0px 0px 215px;
+  height: 135px;
 }
 
 .article-header{
-    font-size: 16px;
-    font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .article-header a{
-    text-decoration: none;
-    color: green;
-    padding: 2px;
+  text-decoration: none;
+  color: green;
+  padding: 2px;
 }
 
 .article-header a:hover{
-    text-decoration: underline;
-    background-color: #FFFACD;
+  text-decoration: underline;
+  background-color: #FFFACD;
 }
 
 .article-description{
-    padding: 0px 0px 0px 2px;
+  padding: 0px 0px 0px 2px;
 }
 
 .video-length{
-    font-size: 11px;
-    color: gray;
-    margin: 0px 0px 0px 3px;
+  font-size: 11px;
+  color: gray;
+  margin: 0px 0px 0px 3px;
 }
 
 .preview-image img{
-    height: 125px;
-    width: 200px;
-    border: 1px solid gray;
-    position: absolute;
+  height: 125px;
+  width: 200px;
+  border: 1px solid gray;
+  position: absolute;
 }
 
 #footer{
-    font-size: 12px;
-    text-align: center;
-    margin: 10px 0px 10px 0px;
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
 }
 
 .video-content{
-    width: 800px;
-    margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
 }
 
 .header-comment-count{
-    font-size: 12px;
-    font-weight: normal;
+  font-size: 12px;
+  font-weight: normal;
 }
 
 .video-content-title{
-    margin: 20px 0px 5px 0px;
-    font-weight: bold;
-    font-size: 20px;
+  margin: 20px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .video-content-title-episode{
-    color: gray;
+  color: gray;
 }
 
 .video-content-metadata{
-    margin: 0px 0px 10px 0px;
-    color: gray;
+  margin: 0px 0px 10px 0px;
+  color: gray;
 }
 
 .video-content-description{
-    margin: 10px 0px 30px 0px;
-    padding: 10px 0px 0px 0px;
-    border-top: solid 1px black;
+  margin: 10px 0px 30px 0px;
+  padding: 10px 0px 0px 0px;
+  border-top: solid 1px black;
 }
 
 #about-head{
-    margin: 0px 0px 5px 0px;
+  margin: 0px 0px 5px 0px;
 }
 
 #about-head h1{
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #about-contact{
-    margin: 20px 0px 5px 0px;
+  margin: 20px 0px 5px 0px;
 }
 
 #about-contact h2{
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
+
+.topbar{
+position: static !important;
+}
+

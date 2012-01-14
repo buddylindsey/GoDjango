@@ -1,14 +1,13 @@
-(function() {
-  var list, number, square;
+$(document).ready(function(){
+  var path = location.pathname;
+  if(path == "/"){
+    $("#home-link").addClass("active");
+  } else if(path == "/about/"){
+    $("#about-link").addClass("active");
+  } else if(path == "/feedback/"){
+    $("#feedback-link").addClass("active");
+  }
 
-  list = [1, 2, 3];
+  $('.tabs').tabs();
+});
 
-  number = 5;
-
-  square = function(x) {
-    return x * x;
-  };
-
-  if (list[0] === 1) document.write('hello');
-
-}).call(this);
