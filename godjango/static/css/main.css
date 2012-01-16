@@ -2317,6 +2317,15 @@ header.container .content .page-header {
 .article {
   border-bottom: 1px lightgray solid;
   margin: 20px 0px 20px 0px;
+  zoom: 1;
+}
+.article:before, .article:after {
+  display: table;
+  content: "";
+  zoom: 1;
+}
+.article:after {
+  clear: both;
 }
 .article-content {
   margin: 0px 0px 20px 215px;
@@ -2347,12 +2356,12 @@ header.container .content .page-header {
 }
 .preview-image {
   margin-bottom: 20px;
+  float: left;
 }
 .preview-image img {
   height: 125px;
   width: 200px;
   border: 1px solid gray;
-  position: absolute;
 }
 .video-content {
   width: 820px;
