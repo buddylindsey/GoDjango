@@ -6,6 +6,7 @@ bin
 build
 include
 lib
+bootstrap
 .Python
 db.sqlite3
 *.orig
