@@ -4,10 +4,13 @@
 {% if message %}
    <div class="">{{ message }}</div>
 {% endif %}
-<form action="/feedback/" method="post">{% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
+<form action="/feedback/" class="form-stacked" method="post">{% csrf_token %}
+    {% for field in form %}
+        <div class="field-wrapper">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
 <input type="submit" name="submit" />
 </form>
 {% endblock %}

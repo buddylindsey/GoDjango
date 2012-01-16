@@ -14,12 +14,12 @@
 <div class="video-content">
   <div class="video">
     <video class="sublime" width="800" height="600" poster="{{ video.preview_imgae }}">
-    {% if video.video_mp4 %}
-    <source src="{{ video.video_mp4 }}" />
-    {% endif %}
-    {% if video.video_vp8 %}
-    <source src="{{ video.video_vp8 }}" />
-    {% endif %}
+        {% if video.video_mp4 %}
+            <source src="{{ video.video_mp4 }}" />
+        {% endif %}
+        {% if video.video_vp8 %}
+            <source src="{{ video.video_vp8 }}" />
+        {% endif %}
     </video>
   </div>
   <div class="video-content-title">
@@ -42,7 +42,7 @@
         {{ video.description }}     
       </div>
       <div id="shownotes">
-        {{ video.show_notes }}
+        {{ video.show_notes|safe }}
       </div>
       <div id="comments">
         <div class="video-content-comments">

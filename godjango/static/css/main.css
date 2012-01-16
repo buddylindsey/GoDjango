@@ -167,3 +167,20 @@ table {
     position: static !important;
 }
 
+/*********** Syntax Highlighting **********/
+.syntax .hll { background-color: #404040 }
+.syntax  { background: #202020; color: #d0d0d0 }
+.syntax .c { color: #999999; font-style: italic } /* Comment */
+.syntax .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.syntax .g { color: #d0d0d0 } /* Generic */
+.syntax .k { color: #6ab825; font-weight: bold } /* Keyword */
+.syntax .l { color: #d0d0d0 } /* Literal */
+.syntax .n { color: #d0d0d0 } /* Name */
+.syntax .o { color: #d0d0d0 } /* Operator */
+.syntax .x { color: #d0d0d0 } /* Other */
+.syntax .p { color: #d0d0d0 } /* Punctuation */
+.syntax .cm { color: #999999; font-style: italic } /* Comment.Multiline */
+.syntax .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.syntax .c1 { color: #999999; font-style: italic } /* Comment.Single */
+.syntax .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
+.syntax .gd { color: #d22323 } /* G
