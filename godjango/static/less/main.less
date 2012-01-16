@@ -1,0 +1,157 @@
+// CSS Reset
+@import "../../bootstrap/lib/reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../../bootstrap/lib/mixins.less";
+/*@import "mixins.less";*/
+
+// Grid system and page structure
+@import "../../bootstrap/lib/scaffolding.less";
+
+// Styled patterns and elements
+@import "../../bootstrap/lib/type.less";
+@import "../../bootstrap/lib/forms.less";
+/*@import "../bootstrap/lib/tables.less";*/
+@import "../../bootstrap/lib/patterns.less";
+
+#header{
+  line-height: 100px;
+  padding: 0px 0px 0px 100px;
+  font-size: 25px;
+}
+
+#content{
+}
+
+.content{
+}
+
+.sidebar{
+    margin: 15px 0px 0px 0px;
+}
+
+.article{
+  border-bottom: 1px lightgray solid;
+  min-width: 600px;
+  margin: 20px 0px 20px 0px;
+}
+
+.article-content{
+  margin: 0px 0px 0px 215px;
+  height: 135px;
+}
+
+.article-header{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.article-header a{
+  text-decoration: none;
+  color: green;
+  padding: 2px;
+}
+
+.article-header a:hover{
+  text-decoration: underline;
+  background-color: #FFFACD;
+}
+
+.article-description{
+  padding: 0px 0px 0px 2px;
+}
+
+.video{
+    margin: 15px 0px 0px 0px;
+}
+
+.video-length{
+  font-size: 11px;
+  color: gray;
+  margin: 0px 0px 0px 3px;
+}
+
+.preview-image img{
+  height: 125px;
+  width: 200px;
+  border: 1px solid gray;
+  position: absolute;
+}
+
+#footer{
+  font-size: 12px;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.video-content{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.header-comment-count{
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.video-content-title{
+  margin: 20px 0px 5px 0px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.video-content-title-episode{
+  color: gray;
+}
+
+.video-content-metadata{
+  margin: 0px 0px 10px 0px;
+  color: gray;
+}
+
+.video-content-description{
+  margin: 10px 0px 30px 0px;
+  padding: 10px 0px 0px 0px;
+  border-top: solid 1px black;
+}
+
+#about-head{
+  margin: 0px 0px 5px 0px;
+}
+
+#about-head h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#about-contact{
+  margin: 20px 0px 5px 0px;
+}
+
+#about-contact h2{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.topbar{
+    position: static !important;
+}
+
+/*********** Syntax Highlighting **********/
+.syntax .hll { background-color: #404040 }
+.syntax  { background: #202020; color: #d0d0d0 }
+.syntax .c { color: #999999; font-style: italic } /* Comment */
+.syntax .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.syntax .g { color: #d0d0d0 } /* Generic */
+.syntax .k { color: #6ab825; font-weight: bold } /* Keyword */
+.syntax .l { color: #d0d0d0 } /* Literal */
+.syntax .n { color: #d0d0d0 } /* Name */
+.syntax .o { color: #d0d0d0 } /* Operator */
+.syntax .x { color: #d0d0d0 } /* Other */
+.syntax .p { color: #d0d0d0 } /* Punctuation */
+.syntax .cm { color: #999999; font-style: italic } /* Comment.Multiline */
+.syntax .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.syntax .c1 { color: #999999; font-style: italic } /* Comment.Single */
+.syntax .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
+.syntax .gd { color: #d22323 } /* G */
