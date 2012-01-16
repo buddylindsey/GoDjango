@@ -2259,22 +2259,67 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
-#header {
-  line-height: 100px;
-  padding: 0px 0px 0px 100px;
-  font-size: 25px;
+/* Override some defaults */
+html, body {
+  background-color: #eee;
 }
-.sidebar {
-  margin: 15px 0px 0px 0px;
+.container > footer p {
+  text-align: center;
+  /* center align it with the container */
+
 }
+.container {
+  width: 820px;
+  /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+
+}
+header.container .content {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding-bottom: 0;
+}
+header.container .content .page-header {
+  margin-bottom: 0;
+  border: none;
+}
+/* The white background content wrapper */
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 -20px;
+  /* negative indent the amount of the padding to maintain the grid system */
+
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+/* Page header tweaks */
+.page-header {
+  background-color: #f5f5f5;
+  padding: 20px 20px 10px;
+  margin: -20px -20px 20px;
+}
+/* Give a quick and non-cross-browser friendly divider */
+.content .span4 {
+  margin-left: 0;
+  padding-left: 19px;
+  border-left: 1px solid #eee;
+}
+/*
+.sidebar{
+    margin: 15px 0px 0px 0px;
+}
+*/
 .article {
   border-bottom: 1px lightgray solid;
-  min-width: 600px;
   margin: 20px 0px 20px 0px;
 }
 .article-content {
-  margin: 0px 0px 0px 215px;
-  height: 135px;
+  margin: 0px 0px 20px 215px;
 }
 .article-header {
   font-size: 16px;
@@ -2293,12 +2338,15 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   padding: 0px 0px 0px 2px;
 }
 .video {
-  margin: 15px 0px 0px 0px;
+  margin: 15px 0px 0px 10px;
 }
 .video-length {
   font-size: 11px;
   color: gray;
   margin: 0px 0px 0px 3px;
+}
+.preview-image {
+  margin-bottom: 20px;
 }
 .preview-image img {
   height: 125px;
@@ -2306,13 +2354,8 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   border: 1px solid gray;
   position: absolute;
 }
-#footer {
-  font-size: 12px;
-  text-align: center;
-  margin: 10px 0px 10px 0px;
-}
 .video-content {
-  width: 800px;
+  width: 820px;
   margin: 0 auto;
 }
 .header-comment-count {

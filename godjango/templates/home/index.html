@@ -6,36 +6,33 @@ GoDjango.com - Going Through Django Screencasts
 
 {% block content %}
 
-<div class="row">
-    <div class="span10">
-
-        {% if videos %}
-        {% for v in videos %}
-        <div class="article">
-            <div class="preview-image">
-                <img src="{{ v.thumbnail_image }}" />
-            </div>
-            <div class="article-content">
-                <div class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></div>
-                <div class="article-description">
-                    {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        {% else %}
-        <p>
-        There are no videos at this time.
-        </p>
-        {% endif %}
-
+{% if videos %}
+{% for v in videos %}
+<div class="article">
+    <div class="preview-image">
+        <img src="{{ v.thumbnail_image }}" />
     </div>
-    <div class="span4 sidebar">
-        <ul>
-            <li><a href="http://feeds.feedburner.com/GoDjango">RSS</a></li>
-            <li><a href="http://www.facebook.com/pages/GoDjango/110180145763953">Facebook</a></li>
-        </ul>
+    <div class="article-content">
+        <div class="article-header"><a href="{% url home.views.video video_id=v.id slug=v.slug %}">{{ v.title }}</a> <span class="header-comment-count">(<fb:comments-count href="http://godjango.com{% url home.views.video video_id=v.id slug=v.slug %}"></fb:comments-count> comments)</span></div>
+        <div class="article-description">
+            {{ v.description }} <span class="video-length">({{ v.length }} minutes)</span>
+        </div>
     </div>
 </div>
+{% endfor %}
+{% else %}
+<p>
+There are no videos at this time.
+</p>
+{% endif %}
+
+{% endblock %}
+
+{% block sidebar %}
+
+<ul>
+    <li><a href="http://feeds.feedburner.com/GoDjango">RSS</a></li>
+    <li><a href="http://www.facebook.com/pages/GoDjango/110180145763953">Facebook</a></li>
+</ul>
 
 {% endblock %}
