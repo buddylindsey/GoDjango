@@ -2,17 +2,20 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="/static/css/main.css" />
         <link rel="alternate" type="application/rss+xml" title="GoDjango.com Main Feed (RSS 2.0)" href="http://feeds.feedburner.com/GoDjango" />
-        <link rel="stylesheet" tyle="text/css" href="/static/css/bootstrap.css" />
+        <link rel="stylesheet" tyle="text/css" href="/static/css/main.css" />
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="/static/js/app.js"></script>
         {% block head %}{% endblock %}
     </head>
     <body>
-        <div id="header">
-            GoDjango - Going Through Django Screencasts
-        </div>
+	    <header class="container">
+			<div class="content">
+				<div class="page-header">
+					<h1>GoDjango <small>Going Through Django Screencasts</small></h1>
+				</div>
+			</div>
+		</header>
         <div class="topbar-wrapper">
             <div class="topbar"  >
                 <div class="topbar-inner">
@@ -26,13 +29,38 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            {% block content %}{% endblock %}
-        </div>
-
-        <footer id="footer">
-            Content and Videos &copy; 2011-2012 GoDjango
-        </footer>
+		
+		<!--
+ 	    <div class="topbar">
+			<div class="fill">
+				<div class="container">
+					<ul class="nav">
+						<li id="home-link"><a href="{% url home.views.index %}">Browse Videos</a></li>
+						<li id="about-link"><a href="{% url about %}">About GoDjango</a></li> 
+						<li id="feedback-link"><a href="{% url feedback %}">Feedback</a></li> 
+					</ul>
+				</div>
+			</div>
+	    </div>
+		 -->
+		 
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="span10">
+						<!-- <h2>Main content</h2> -->
+						{% block content %}{% endblock %}
+					</div>
+					<div class="span4">
+						<!-- <h3>Secondary content</h3> -->
+						{% block sidebar %}{% endblock %}
+					</div>
+				</div>
+			</div>
+			<footer>
+				<p>Content and Videos &copy; 2011-2012 GoDjango</p>
+			</footer>
+		</div> <!-- /container -->
 
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -41,8 +69,8 @@
             js = d.createElement(s); js.id = id;
             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=120305901411601";
             fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-        <script type="text/javascript">
+            }(document, 'script', 'facebook-jssdk'));
+			
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-805005-16']);
             _gaq.push(['_trackPageview']);

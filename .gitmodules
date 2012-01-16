@@ -1,0 +1,3 @@
+[submodule "godjango/bootstrap"]
+	path = godjango/bootstrap
+	url = git://github.com/twitter/bootstrap.git

@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if message %}
-   <div class="">{{ message }}</div>
-{% endif %}
-<form action="/feedback/" class="form-stacked" method="post">{% csrf_token %}
-    {% for field in form %}
-        <div class="field-wrapper">
-            {{ field.errors }}
-            {{ field.label_tag }} {{ field }}
-        </div>
-    {% endfor %}
-<input type="submit" name="submit" />
+<form action="/feedback/" method="post">{% csrf_token %}
+	<fieldset>
+	    {% for field in form %}
+		<div class="clearfix">
+			{{ field.label_tag }}
+			<div class="input">
+				{{ field }}
+				{% if field.errors %}
+				<span>{{ field.errors }}</span>
+				{% endif %}
+			</div>
+		</div>
+	    {% endfor %}
+		<div class="actions">
+			<input type="submit" name="submit" class="btn primary" value="Send Feeback"/>
+			{% if message %}
+			   <span>{{ message }}</span>
+			{% endif %}
+		</div>
+	</fieldset>
 </form>
 {% endblock %}
