@@ -114,6 +114,10 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'social_auth.context_processors.social_auth_by_type_backends',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -128,7 +132,27 @@ INSTALLED_APPS = (
     'home',
     'coffee',
     'south',
+    'social_auth',
 )
+
+# Django Social Auth settings
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.contrib.github.GithubBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github',)
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+
+GITHUB_APP_ID                = os.environ['GITHUB_APP_ID']
+GITHUB_API_SECRET            = os.environ['GITHUB_API_SECRET']
+
+LOGIN_URL          = '/login/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
+
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
