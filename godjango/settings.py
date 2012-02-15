@@ -115,6 +115,7 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
     'social_auth.context_processors.social_auth_by_type_backends',
 )
 
@@ -125,10 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admin',
+
     'home',
     'coffee',
     'south',
@@ -146,12 +145,12 @@ SOCIAL_AUTH_ENABLED_BACKENDS = ('github',)
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 
 GITHUB_APP_ID                = os.environ['GITHUB_APP_ID']
-GITHUB_API_SECRET            = os.environ['GITHUB_API_SECRET']
+GITHUB_API_SECRET            = os.environ['GITHUB_APP_SECRET']
 
 LOGIN_URL          = '/login/'
-LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 LOGIN_ERROR_URL    = '/login-error/'
-
+#SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
 
 
 # A sample logging configuration. The only tangible logging

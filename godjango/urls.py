@@ -1,18 +1,22 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.views.generic.simple import redirect_to
 from home.rss import LatestVideos
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'', include('social_auth.urls')),
+    # Admin Stuffs
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'home.views.index'),
+
+    # User auth stuffs
+    url(r'', include('social_auth.urls')),
+    url(r'^dashboard/$', 'users.views.dashboard', name="dashboard"),
+    url(r'^login/$', redirect_to, { 'url': '/login/github' }),
+    url(r'^logout/$', 'users.views.logout'),
+
+    # home
+    url(r'^$', 'home.views.index', name="index"),
     url(r'^about/$', 'home.views.about', name="about"),
     url(r'^feedback/$', 'contact.views.feedback', name="feedback"),
     url(r'^rss/main', LatestVideos()),
