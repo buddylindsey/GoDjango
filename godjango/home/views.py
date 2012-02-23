@@ -10,7 +10,7 @@ from home.models import Video
 from datetime import datetime
 
 def index(request):
-    videos = Video.objects.filter(publish_date__lte=datetime.now()).order_by('-publish_date')[:10]
+    videos = Video.objects.filter(publish_date__lte=datetime.now()).order_by('-publish_date')[:20]
     return render_to_response('home/index.html', 
             { 'videos': videos },
             context_instance=RequestContext(request))
