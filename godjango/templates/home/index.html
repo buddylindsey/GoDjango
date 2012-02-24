@@ -7,7 +7,7 @@ GoDjango.com - Going Through Django Screencasts
 {% block content %}
 
 {% if videos %}
-{% for v in videos %}
+{% for v in videos.object_list %}
 <div class="article">
     <div class="preview-image">
         <img src="{{ v.thumbnail_image }}" />
@@ -20,6 +20,29 @@ GoDjango.com - Going Through Django Screencasts
     </div>
 </div>
 {% endfor %}
+
+<div class="row">
+    <div class="span10">
+        <div class="pagination">
+        <ul>
+        {% if videos.has_previous %}
+            <li class="prev"><a href="?page={{ videos.previous_page_number }}">previous</a></li>
+        {% endif %}
+        {% for pgn in videos.paginator.page_range %}
+            {% if videos.number == pgn %}
+            <li class="active"><a href="?page={{ pgn }}">{{ pgn }}</a></li>
+            {% else %}
+            <li><a href="?page={{ pgn }}">{{ pgn }}</a></li>
+            {% endif %}
+        {% endfor %}
+        {% if videos.has_next %}
+            <li class="next"><a href="?page={{ videos.next_page_number }}">next</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    </div>
+</div>
+
 {% else %}
 <p>
 There are no videos at this time.
