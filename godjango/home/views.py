@@ -12,7 +12,7 @@ from datetime import datetime
 
 def index(request):
     videos_list = Video.objects.filter(publish_date__lte=datetime.now()).order_by('-publish_date')
-    
+
     paginator = Paginator(videos_list, 10)
 
     try:
