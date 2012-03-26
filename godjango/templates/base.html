@@ -7,59 +7,69 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/app.js"></script>
     {% block head %}{% endblock %}
-  </head>
-  <body>
-    <header class="container">
-    <div class="content">
-      <div class="page-header">
-        <h1>GoDjango <small>Going Through Django Screencasts</small></h1>
-      </div>
-    </div>
-    </header>
-    <div class="topbar-wrapper">
-      <div class="topbar"  >
-        <div class="topbar-inner">
-          <div class="container">
-            <ul class="nav">
-              <li id="home-link"><a href="{% url index %}">Browse Videos</a></li>
-              <li id="about-link"><a href="{% url about %}">About GoDjango</a></li> 
-              <li id="feedback-link"><a href="{% url feedback %}">Feedback</a></li> 
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="content">
-        <div class="row">
-          <div class="span10">
-            <!-- <h2>Main content</h2> -->
-            {% block content %}{% endblock %}
-          </div>
-          <div class="span4">
-            <!-- <h3>Secondary content</h3> -->
-            {% block sidebar %}{% endblock %}
-          </div>
-        </div>
-      </div>
-      <footer>
-      <p>
-        Content and Videos &copy; 2012 GoDjango - hosting by <a href="http://www.linode.com/?r=3a66ff0ec674bff254f8de21f5418489b791336e">Linode</a>
-      </p>
-      </footer>
-    </div> <!-- /container -->
-
-    <div id="fb-root"></div>
     <script type="text/javascript">
-      <!-- Facebook -->
-      (function(d, s, id) {
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=120305901411601";
-       fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-      <!-- Facebook End -->
-    </script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-805005-16']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+       })();
+     </script>
+   </head>
+   <body>
+     <header class="container">
+     <div class="content">
+       <div class="page-header">
+         <h1>GoDjango <small>Going Through Django Screencasts</small></h1>
+       </div>
+     </div>
+     </header>
+     <div class="topbar-wrapper">
+       <div class="topbar"  >
+         <div class="topbar-inner">
+           <div class="container">
+             <ul class="nav">
+               <li id="home-link"><a href="{% url index %}">Browse Videos</a></li>
+               <li id="about-link"><a href="{% url about %}">About GoDjango</a></li> 
+               <li id="feedback-link"><a href="{% url feedback %}">Feedback</a></li> 
+             </ul>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class="container">
+       <div class="content">
+         <div class="row">
+           <div class="span10">
+             <!-- <h2>Main content</h2> -->
+             {% block content %}{% endblock %}
+           </div>
+           <div class="span4">
+             <!-- <h3>Secondary content</h3> -->
+             {% block sidebar %}{% endblock %}
+           </div>
+         </div>
+       </div>
+       <footer>
+       <p>
+       Content and Videos &copy; 2012 GoDjango - hosting by <a href="http://www.linode.com/?r=3a66ff0ec674bff254f8de21f5418489b791336e">Linode</a>
+       </p>
+       </footer>
+     </div> <!-- /container -->
+
+     <div id="fb-root"></div>
+     <script type="text/javascript">
+       <!-- Facebook -->
+       (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=120305901411601";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+<!-- Facebook End -->
+</script>
   </body>
 </html>
